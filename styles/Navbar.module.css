@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-outfit);
+  color: white;
+}
+
+.logoIcon {
+  color: hsl(var(--primary));
+  filter: drop-shadow(0 0 8px hsla(var(--primary), 0.5));
+}
+
+.logo span span {
+  color: hsl(var(--primary));
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLinks a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navLinks a:hover {
+  color: white;
+}
+
+.activeLink {
+  color: white !important;
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: hsl(var(--primary));
+  border-radius: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 44px;
+  overflow: hidden;
+}
+
+.searchWrapper.expanded {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: hsla(var(--primary), 0.5);
+  box-shadow: 0 0 15px hsla(var(--primary), 0.2);
+}
+
+.searchToggle {
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 0.75rem;
+  width: 100%;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.menuToggle {
+  display: none;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .menuToggle {
+    display: block;
+  }
+  
+  .searchWrapper.expanded {
+    width: 200px;
+  }
+}

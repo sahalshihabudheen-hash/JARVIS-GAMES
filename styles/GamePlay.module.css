@@ -1,0 +1,175 @@
+.page {
+  padding-top: 100px;
+}
+
+.contentLayout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adPlaceholderTop {
+  height: 90px;
+  background: hsl(var(--card));
+  border: 1px dashed var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.1em;
+}
+
+.gameContainer {
+  background: hsl(var(--card));
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+}
+
+.iframeWrapper {
+  width: 100%;
+  max-height: 80vh;
+  background: black;
+}
+
+.iframeWrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--glass-border);
+}
+
+.gameInfo h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.gameInfo p {
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.actions button:hover {
+  background: hsla(var(--primary), 0.2);
+  color: hsl(var(--primary));
+  transform: translateY(-2px);
+}
+
+.detailsSection {
+  background: hsl(var(--card));
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+}
+
+.description h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.description p {
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.adPlaceholderSide {
+  height: 600px;
+  background: hsl(var(--card));
+  border: 1px dashed var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.1em;
+}
+
+.relatedHeader h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.relatedGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loadingWrapper, .errorWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.loader, .error {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 1200px) {
+  .contentLayout {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    display: none; /* Hide sidebar on small screens or move it below */
+  }
+}
