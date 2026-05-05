@@ -164,6 +164,23 @@
   color: var(--muted-foreground);
 }
 
+.iframeWarning {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.iframeWarning a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
 @media (max-width: 1200px) {
   .contentLayout {
     grid-template-columns: 1fr;

@@ -30,12 +30,12 @@ export default function Home() {
       setFilteredGames(games);
     } else {
       setFilteredGames(games.filter(g => 
-        g.categories.en.some(c => c.toLowerCase() === category.toLowerCase())
+        g.categories.some(c => c.toLowerCase() === category.toLowerCase())
       ));
     }
   };
 
-  const categories = Array.from(new Set(games.flatMap(g => g.categories.en))).sort();
+  const categories = Array.from(new Set(games.flatMap(g => g.categories))).sort();
 
   return (
     <main className={styles.main}>
@@ -44,9 +44,9 @@ export default function Home() {
       <header className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
-            <h1 className="animate-fade-in">Ultimate Gaming <span>Universe</span></h1>
+            <h1 className="animate-fade-in">Premium Gaming <span>Hub</span></h1>
             <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              Explore over 100+ free HTML5 games. No downloads, no installs, just pure fun.
+              Play the world's best free HTML5 games. Instant access to high-quality titles like Football Legends, Ludo Star, and more!
             </p>
           </div>
         </div>
@@ -61,11 +61,11 @@ export default function Home() {
           />
 
           {isLoading ? (
-            <div className={styles.loader}>Loading Games...</div>
+            <div className={styles.loader}>Loading Premium Games...</div>
           ) : (
             <div className={styles.grid}>
               {filteredGames.map((game) => (
-                <GameCard key={game.code} game={game} />
+                <GameCard key={game.id} game={game} />
               ))}
             </div>
           )}
