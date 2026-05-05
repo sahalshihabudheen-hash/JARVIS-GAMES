@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Gamepad2, Github, Twitter, Instagram } from 'lucide-react';
+import { Gamepad2, Github, X, Instagram } from 'lucide-react';
 import styles from '@/styles/Footer.module.css';
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
             </Link>
             <p>The best place to play free HTML5 games online. No downloads required!</p>
             <div className={styles.socials}>
-              <a href="#"><Twitter size={20} /></a>
+              <a href="#"><X size={20} /></a>
               <a href="#"><Instagram size={20} /></a>
               <a href="#"><Github size={20} /></a>
             </div>
